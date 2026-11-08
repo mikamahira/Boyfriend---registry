@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HR Portal · The Boyfriend Registry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css"><script src="/admin.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/">♥ <span>THE BOYFRIEND REGISTRY</span></a><a class="tiny-link" href="/">← Public site</a></header>
+<main class="form-shell" style="max-width:1000px">
+  <section id="loginView">
+    <div class="form-heading"><div class="eyebrow">PRIVATE ACCESS</div><h2>Welcome back, HR.</h2><p>This area is for the recruitment team only.</p></div>
+    <form id="loginForm"><label>Admin password<input name="password" type="password" required autocomplete="current-password" placeholder="Your secret password"></label><button class="primary-btn" type="submit">UNLOCK DASHBOARD ♥</button><p class="form-error" id="loginError" role="alert"></p></form>
+  </section>
+  <section id="dashboard" class="hidden">
+    <div class="form-heading"><div class="eyebrow">CONFIDENTIAL · HR ONLY</div><h2>Applicant dashboard.</h2><p>Review applications, update their status or remove an entry.</p></div>
+    <div class="form-actions" style="border:0;padding:0"><strong id="countLabel">0 applications</strong><button class="secondary-btn" id="logoutBtn">SIGN OUT</button></div>
+    <div id="applicantList"></div>
+  </section>
+</main>
+<footer>Keep applicant information private. ♥</footer>
+</body></html>

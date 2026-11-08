@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff4f6">
+  <title>The Boyfriend Registry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">♥ <span>THE BOYFRIEND REGISTRY</span></a><a class="tiny-link" href="/admin">HR portal ↗</a></header>
+  <main>
+    <section class="hero" id="welcome">
+      <div class="hero-card">
+        <div class="eyebrow">NOW ACCEPTING APPLICATIONS · EST. 2026</div>
+        <div class="hero-heart">♡</div>
+        <h1>So, you think<br>you have <em>what it takes?</em></h1>
+        <p class="hero-copy">We're looking for someone intentional, emotionally available, funny and just the right amount of obsessed.</p>
+        <div class="hero-note">Good communication is attractive. Just saying.</div>
+        <button class="primary-btn" id="startBtn">START YOUR APPLICATION <span>♥</span></button>
+        <p class="micro">Approximately 5 minutes · 20 questions · No pressure (a little pressure)</p>
+      </div>
+      <div class="floating-stamp stamp-one">HR APPROVED? ♡</div>
+      <div class="floating-stamp stamp-two">LOVE, BUT MAKE IT INTENTIONAL</div>
+    </section>
+
+    <section class="form-shell hidden" id="application">
+      <div class="form-heading">
+        <div class="eyebrow">THE OFFICIAL APPLICATION</div>
+        <h2>Let's get to know you.</h2>
+        <p>Answer honestly. The recruitment team has excellent instincts.</p>
+        <div class="progress-meta"><span id="stepLabel">SECTION 1 OF 5</span><span id="progressPercent">0%</span></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </div>
+      <form id="applicationForm" enctype="multipart/form-data">
+        <div class="form-step active" data-step="0">
+          <h3>01 / The basics <span>🪪</span></h3>
+          <p class="section-intro">First things first. Who are you, applicant?</p>
+          <label>Full name<input name="fullName" required placeholder="Your government name, please"></label>
+          <div class="two-col">
+            <label>Age<input name="age" type="number" min="18" max="99" required placeholder="18+ only"></label>
+            <label>Location<input name="location" required placeholder="City / country"></label>
+          </div>
+          <label>What should I save your contact as?<input name="contactName" required placeholder="Be creative..."></label>
+          <label>Upload your best picture <span class="optional">optional</span><input name="photo" type="file" accept="image/png,image/jpeg,image/webp"><small>JPG, PNG or WEBP. Maximum 4MB.</small></label>
+        </div>
+
+        <div class="form-step" data-step="1">
+          <h3>02 / Your intentions <span>💗</span></h3>
+          <p class="section-intro">Let's make sure we're applying for the same position.</p>
+          <fieldset><legend>What are you looking for?</legend>
+            <label class="choice"><input type="radio" name="intentions" value="A serious relationship" required><span>A serious relationship</span></label>
+            <label class="choice"><input type="radio" name="intentions" value="Something intentional"><span>Something intentional</span></label>
+            <label class="choice"><input type="radio" name="intentions" value="Let's see where it goes"><span>Let's see where it goes</span></label>
+            <label class="choice"><input type="radio" name="intentions" value="Just vibes"><span>Just vibes</span></label>
+          </fieldset>
+          <label>Describe your ideal relationship in three words<input name="relationshipWords" required placeholder="e.g. safe, fun, intentional"></label>
+          <fieldset><legend>What's your love language?</legend>
+            <label class="choice"><input type="radio" name="loveLanguage" value="Physical touch" required><span>Physical touch</span></label>
+            <label class="choice"><input type="radio" name="loveLanguage" value="Quality time"><span>Quality time</span></label>
+            <label class="choice"><input type="radio" name="loveLanguage" value="Words of affirmation"><span>Words of affirmation</span></label>
+            <label class="choice"><input type="radio" name="loveLanguage" value="Acts of service"><span>Acts of service</span></label>
+            <label class="choice"><input type="radio" name="loveLanguage" value="Receiving gifts"><span>Receiving gifts</span></label>
+          </fieldset>
+          <label>What's one thing you bring to a relationship?<textarea name="bringToRelationship" required placeholder="Sell yourself, respectfully..." rows="3"></textarea></label>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h3>03 / Boyfriend qualifications <span>🎓</span></h3>
+          <p class="section-intro">The serious department. Please don't fumble.</p>
+          <fieldset><legend>How do you handle arguments?</legend>
+            <label class="choice"><input type="radio" name="conflict" value="Communicate and resolve things" required><span>Communicate and resolve things</span></label>
+            <label class="choice"><input type="radio" name="conflict" value="Take space, then talk"><span>Take space, then talk</span></label>
+            <label class="choice"><input type="radio" name="conflict" value="Go quiet until I am ready"><span>Go quiet until I'm ready</span></label>
+            <label class="choice"><input type="radio" name="conflict" value="Avoid the conversation"><span>Avoid the conversation (HR is concerned)</span></label>
+          </fieldset>
+          <fieldset><legend>Are you a good morning and goodnight texter?</legend>
+            <label class="choice"><input type="radio" name="goodMorning" value="Absolutely" required><span>Absolutely</span></label>
+            <label class="choice"><input type="radio" name="goodMorning" value="Sometimes"><span>Sometimes</span></label>
+            <label class="choice"><input type="radio" name="goodMorning" value="Only when I remember"><span>Only when I remember 😭</span></label>
+          </fieldset>
+          <label>How jealous are you, from 1 to 10?<input name="jealousy" required placeholder="Be honest..."></label>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h3>04 / Compatibility check <span>💋</span></h3>
+          <p class="section-intro">A little romance, a little common sense.</p>
+          <fieldset><legend>Who should initiate dates?</legend>
+            <label class="choice"><input type="radio" name="dateInitiator" value="Me" required><span>Me</span></label>
+            <label class="choice"><input type="radio" name="dateInitiator" value="You"><span>You</span></label>
+            <label class="choice"><input type="radio" name="dateInitiator" value="Both of us"><span>Both of us</span></label>
+          </fieldset>
+          <fieldset><legend>Your girl is having a bad day. What do you do?</legend>
+            <label class="choice"><input type="radio" name="badDay" value="Call her and listen" required><span>Call her and listen</span></label>
+            <label class="choice"><input type="radio" name="badDay" value="Show up with food"><span>Show up with food</span></label>
+            <label class="choice"><input type="radio" name="badDay" value="Send her money for a treat"><span>Send her money for a treat</span></label>
+            <label class="choice"><input type="radio" name="badDay" value="All of the above"><span>All of the above. Obviously.</span></label>
+          </fieldset>
+          <label>What's your ideal first date?<textarea name="firstDate" required rows="3" placeholder="The floor is yours..."></textarea></label>
+          <fieldset><legend>Can you handle someone clingy sometimes, stubborn occasionally and very affectionate?</legend>
+            <label class="choice"><input type="radio" name="clingy" value="Yes, absolutely" required><span>Yes, absolutely</span></label>
+            <label class="choice"><input type="radio" name="clingy" value="I love that"><span>I love that</span></label>
+            <label class="choice"><input type="radio" name="clingy" value="I'm scared but willing"><span>I'm scared but willing 😭</span></label>
+          </fieldset>
+        </div>
+
+        <div class="form-step" data-step="4">
+          <h3>05 / The final interview <span>🤣</span></h3>
+          <p class="section-intro">This is where legends are made. Or rejected.</p>
+          <fieldset><legend>If I steal your hoodie, what happens?</legend>
+            <label class="choice"><input type="radio" name="hoodie" value="You can keep it" required><span>You can keep it</span></label>
+            <label class="choice"><input type="radio" name="hoodie" value="I'm stealing yours too"><span>I'm stealing yours too</span></label>
+            <label class="choice"><input type="radio" name="hoodie" value="Give it back please"><span>Give it back, please 😭</span></label>
+          </fieldset>
+          <label>If I turn into a worm, would you still love me? Explain.<textarea name="worm" required rows="3" placeholder="Your answer will be judged..."></textarea></label>
+          <label>Why should you be selected over other applicants?<textarea name="whyChoose" required rows="3" placeholder="Your closing argument..."></textarea></label>
+          <fieldset><legend>Do you promise to be intentional, honest and consistent?</legend>
+            <label class="choice"><input type="radio" name="promise" value="Yes, I do" required><span>Yes, I do</span></label>
+            <label class="choice"><input type="radio" name="promise" value="Yes, and I'll prove it"><span>Yes, and I'll prove it</span></label>
+            <label class="choice"><input type="radio" name="promise" value="I would like to consult my lawyer"><span>I would like to consult my lawyer 😭</span></label>
+          </fieldset>
+          <p class="privacy-note">By submitting, you agree that your answers and optional photo will be reviewed by the person managing this application site. Please don't include sensitive personal information.</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="secondary-btn" id="backBtn">← BACK</button>
+          <button type="button" class="primary-btn" id="nextBtn">NEXT SECTION →</button>
+          <button type="submit" class="primary-btn hidden" id="submitBtn">SUBMIT APPLICATION ♥</button>
+        </div>
+        <p class="form-error" id="formError" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="success hidden" id="success">
+      <div class="success-card"><div class="hero-heart">♥</div><div class="eyebrow">APPLICATION RECEIVED</div><h2>Well, look at you.</h2><p>Your application has officially landed in the HR department. The recruitment team will be in touch if you've made an impression.</p><div class="status-pill">STATUS: UNDER REVIEW</div><p class="micro">Thank you for applying to The Boyfriend Registry.</p></div>
+    </section>
+  </main>
+  <footer>Made with standards, softness & a little curiosity. <span>♥</span></footer>
+</body>
+</html>
